@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /tweaks-panel.jsx
+
+Sitemap: https://zabroso.cl/sitemap.xml

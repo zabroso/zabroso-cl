@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream:   #FAF9F6;
+  --color-roble:   #5D4037;
+  --color-roble-l: #8D6E63;
+  --color-terra:   #E2725B;
+  --color-verde:   #2E7D32;
+  --color-carbon:  #2C1810;
+  --color-muted:   #8B7355;
+  --color-sun-a:   #FF9E80;
+  --color-sun-b:   #9575CD;
+
+  --font-display: 'Playfair Display', serif;
+  --font-sans:    'Montserrat', sans-serif;
+}
+
+/* ── KEYFRAMES ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes steam {
+  0%   { opacity: 0; transform: translateY(0) scaleX(1); }
+  40%  { opacity: .7; }
+  100% { opacity: 0; transform: translateY(-24px) scaleX(1.5); }
+}
+@keyframes walkin {
+  from { transform: translateX(-120px); }
+  to   { transform: translateX(calc(100vw + 120px)); }
+}
+@keyframes pulse-terra {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(226,114,91,.4); }
+  70%       { box-shadow: 0 0 0 10px rgba(226,114,91,0); }
+}
+@keyframes catbob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-4px); }
+}
+
+/* ── SCROLL REVEAL ── */
+.rv  { opacity: 0; transform: translateY(28px);  transition: opacity .65s ease, transform .65s ease; }
+.rvL { opacity: 0; transform: translateX(-28px); transition: opacity .65s ease, transform .65s ease; }
+.rvR { opacity: 0; transform: translateX(28px);  transition: opacity .65s ease, transform .65s ease; }
+.rv.in, .rvL.in, .rvR.in { opacity: 1; transform: none; }
+
+/* ── DOT GRID ── */
+.dot-grid {
+  background-color: #FAF9F6;
+  background-image: radial-gradient(circle, rgba(93,64,55,0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.theme-noche .dot-grid {
+  background-color: #1C120E;
+  background-image: radial-gradient(circle, rgba(196,168,130,.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* ── ANIMATION UTILITIES ── */
+.animate-float        { animation: float 3.5s ease-in-out infinite; }
+.animate-walkin       { animation: walkin 12s linear infinite; }
+.animate-catbob       { animation: catbob 1.8s ease-in-out infinite; }
+.animate-pulse-terra  { animation: pulse-terra 2.5s infinite; }
+
+/* ── GLOBAL BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html  { scroll-behavior: smooth; overflow-x: hidden; }
+body  {
+  font-family: var(--font-sans);
+  color: #2C1810;
+  overflow-x: hidden;
+  transition: background-color .4s, color .4s;
+}
+#root { width: 100%; }
