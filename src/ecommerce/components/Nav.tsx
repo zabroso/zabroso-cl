@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
 
 const links: [string, string][] = [
-  ['#planes', 'Planes'],
+  ['#incluye', 'Qué incluye'],
   ['#proceso', 'Cómo funciona'],
   ['#faq', 'FAQ'],
-  ['#cotizar', 'Cotizar'],
 ]
 
 export default function Nav() {
@@ -22,9 +21,13 @@ export default function Nav() {
       style={{ boxShadow: scrolled ? '0 2px 24px rgba(93,64,55,.12)' : 'none' }}
       aria-label="Navegación principal"
     >
-      <div className="font-[family-name:var(--font-display)] font-black text-xl text-roble tracking-tight">
-        zabroso<span className="text-terra">.cl</span>
-      </div>
+      <a href="/" className="no-underline flex items-center gap-2">
+        <span className="text-roble text-xs">←</span>
+        <span className="font-[family-name:var(--font-display)] font-black text-xl text-roble tracking-tight">
+          zabroso<span className="text-terra">.cl</span>
+        </span>
+        <span className="hidden sm:inline text-[.7rem] font-semibold uppercase tracking-[.08em] text-muted">/ e-commerce</span>
+      </a>
 
       <ul className="hidden md:flex gap-8 list-none">
         {links.map(([href, label]) => (
@@ -39,24 +42,14 @@ export default function Nav() {
         ))}
       </ul>
 
-      <div className="flex items-center gap-3">
-        <a
-          href="/ecommerce/"
-          className="hidden sm:inline-block px-5 py-2 text-[.78rem] font-bold tracking-[.06em] uppercase text-roble no-underline border-2 border-dashed border-roble bg-transparent transition-colors hover:bg-roble hover:text-cream"
-          aria-label="Cotizar tu tienda online (e-commerce)"
-        >
-          Cotiza tu ecommerce
-        </a>
-
-        <a
-          href="#cotizar"
-          className="inline-block px-6 py-2 text-[.82rem] font-bold tracking-[.06em] uppercase text-white no-underline transition-[box-shadow,transform]"
-          style={{ background: '#E2725B', boxShadow: '3px 3px 0 #3E2723' }}
-          aria-label="Cotizar tu página web"
-        >
-          Cotiza tu web
-        </a>
-      </div>
+      <a
+        href="#cotizar"
+        className="inline-block px-6 py-2 text-[.82rem] font-bold tracking-[.06em] uppercase text-white no-underline transition-[box-shadow,transform]"
+        style={{ background: '#E2725B', boxShadow: '3px 3px 0 #3E2723' }}
+        aria-label="Cotizar tu tienda online"
+      >
+        Cotiza tu ecommerce
+      </a>
     </nav>
   )
 }

@@ -1,13 +1,10 @@
-import './index.css'
-import { useReveal } from './hooks/useReveal'
+import '../index.css'
+import { useReveal } from '../hooks/useReveal'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
-import ValueProps from './components/ValueProps'
-import Planes from './components/Planes'
-import Incluido from './components/Incluido'
-import Mantencion from './components/Mantencion'
+import Incluye from './components/Incluye'
+import Precio from './components/Precio'
 import ComoFunciona from './components/ComoFunciona'
-import Trabajos from './components/Trabajos'
 import FAQ from './components/FAQ'
 import Contacto from './components/Contacto'
 import Footer from './components/Footer'
@@ -19,12 +16,9 @@ export default function App() {
     <>
       <Nav />
       <Hero />
-      <ValueProps />
-      <Planes />
-      <Incluido />
-      <Mantencion />
+      <Incluye />
+      <Precio />
       <ComoFunciona />
-      <Trabajos />
       <FAQ />
       <Contacto />
       <Footer />
