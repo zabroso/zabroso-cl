@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Marca que hay JS: las clases .rv/.rvL/.rvR solo ocultan contenido bajo html.js
+         (ver src/index.css), así el HTML prerenderizado es visible sin JavaScript. -->
+    <script>document.documentElement.classList.add('js')</script>
 
     <!-- ── PRIMARY SEO ── -->
     <title>Tienda Online a Medida (Shopify) | zabroso.cl</title>
@@ -60,13 +63,6 @@
     </script>
   </head>
   <body>
-    <noscript>
-      <div style="max-width:720px;margin:4rem auto;padding:2rem;font-family:Georgia,serif;color:#5D4037">
-        <h1>Tienda online a medida sobre Shopify — zabroso.cl</h1>
-        <p>Para ver la versión interactiva activa JavaScript, o escríbeme directo a <a href="mailto:pablo@zabroso.cl">pablo@zabroso.cl</a>.</p>
-      </div>
-    </noscript>
-
     <div id="root"></div>
     <script type="module" src="/src/ecommerce/main.tsx"></script>
   </body>

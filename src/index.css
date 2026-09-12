@@ -25,11 +25,15 @@
   70%       { box-shadow: 0 0 0 10px rgba(226,114,91,0); }
 }
 
-/* ── SCROLL REVEAL ── */
-.rv  { opacity: 0; transform: translateY(28px);  transition: opacity .65s ease, transform .65s ease; }
-.rvL { opacity: 0; transform: translateX(-28px); transition: opacity .65s ease, transform .65s ease; }
-.rvR { opacity: 0; transform: translateX(28px);  transition: opacity .65s ease, transform .65s ease; }
-.rv.in, .rvL.in, .rvR.in { opacity: 1; transform: none; }
+/* ── SCROLL REVEAL ──
+   El estado oculto solo aplica bajo html.js (clase que agrega un script inline
+   en el <head> de cada index.html). Sin JS el HTML prerenderizado se ve entero;
+   con JS, useReveal agrega .in al entrar en viewport. */
+.rv, .rvL, .rvR { transition: opacity .65s ease, transform .65s ease; }
+html.js .rv  { opacity: 0; transform: translateY(28px); }
+html.js .rvL { opacity: 0; transform: translateX(-28px); }
+html.js .rvR { opacity: 0; transform: translateX(28px); }
+html.js .rv.in, html.js .rvL.in, html.js .rvR.in { opacity: 1; transform: none; }
 
 /* ── DOT GRID ── */
 .dot-grid {

@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Marca que hay JS: las clases .rv/.rvL/.rvR solo ocultan contenido bajo html.js
+         (ver src/index.css), así el HTML prerenderizado es visible sin JavaScript. -->
+    <script>document.documentElement.classList.add('js')</script>
 
     <!-- ── PRIMARY SEO ── -->
     <title>Páginas Web a Medida desde $150.000 | zabroso.cl</title>
@@ -104,48 +107,6 @@
     </script>
   </head>
   <body>
-    <noscript>
-      <div style="max-width:720px;margin:4rem auto;padding:2rem;font-family:Georgia,serif;color:#5D4037">
-        <h1>zabroso.cl — Páginas web a medida</h1>
-        <p>Desarrollo de páginas web a medida en React, sin plantillas ni builders. Para ver la versión interactiva activa JavaScript, o escríbeme directo a <a href="mailto:pablo@zabroso.cl">pablo@zabroso.cl</a>.</p>
-      </div>
-    </noscript>
-
-    <div id="seo-content" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0">
-      <header>
-        <h1>zabroso.cl — Desarrollo de páginas web a medida en Chile</h1>
-        <p>Código propio en React, sin plantillas ni builders. Planes desde $150.000, con dominio, hosting en Cloudflare Pages y certificado SSL gestionados.</p>
-      </header>
-      <nav aria-label="Navegación principal">
-        <ul>
-          <li><a href="#planes">Planes</a></li>
-          <li><a href="#proceso">Cómo funciona</a></li>
-          <li><a href="#faq">Preguntas frecuentes</a></li>
-          <li><a href="#cotizar">Cotizar</a></li>
-          <li><a href="/ecommerce/">Tiendas online (e-commerce)</a></li>
-        </ul>
-      </nav>
-      <section id="planes-seo">
-        <h2>Planes</h2>
-        <article>
-          <h3>Plan Básico — $150.000</h3>
-          <p>Landing de una sola sección: mensaje central y llamado a la acción, ideal para validar una oferta rápido.</p>
-        </article>
-        <article>
-          <h3>Plan Regular — $250.000</h3>
-          <p>Landing completa de conversión, multisección, lista para recibir tráfico de campañas.</p>
-        </article>
-        <article>
-          <h3>Plan Avanzado — $420.000</h3>
-          <p>Landing premium con animaciones e interacciones a medida.</p>
-        </article>
-      </section>
-      <section id="contacto-seo">
-        <h2>Contacto</h2>
-        <p>Email: <a href="mailto:pablo@zabroso.cl">pablo@zabroso.cl</a> · GitHub: <a href="https://github.com/zabroso" rel="me">github.com/zabroso</a> · Chile.</p>
-      </section>
-    </div>
-
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
