@@ -1,3 +1,5 @@
+import { EMAIL, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from '../data/site'
+
 export default function Footer() {
   return (
     <footer className="py-10 px-8 bg-roble">
@@ -6,7 +8,7 @@ export default function Footer() {
           zabroso<span className="text-terra">.cl</span>
         </div>
 
-        <div className="flex gap-8 flex-wrap">
+        <div className="flex gap-8 flex-wrap items-center">
           <a href="#planes" className="no-underline text-[.8rem] font-semibold opacity-75 hover:opacity-100 transition-opacity" style={{ color: '#FAF9F6' }}>
             Planes
           </a>
@@ -16,8 +18,14 @@ export default function Footer() {
           <a href="https://cuzmar.cl" target="_blank" rel="noopener noreferrer" className="no-underline text-[.8rem] font-semibold opacity-75 hover:opacity-100 transition-opacity" style={{ color: '#FAF9F6' }}>
             cuzmar.cl
           </a>
-          <a href="mailto:pablo@zabroso.cl" className="no-underline text-[.8rem] font-semibold opacity-75 hover:opacity-100 transition-opacity" style={{ color: '#FAF9F6' }}>
-            pablo@zabroso.cl
+          <a href={PHONE_TEL} className="no-underline text-[.8rem] font-semibold opacity-75 hover:opacity-100 transition-opacity" style={{ color: '#FAF9F6' }}>
+            {PHONE_DISPLAY}
+          </a>
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="no-underline text-[.8rem] font-bold px-3 py-1" style={{ color: '#FAF9F6', background: '#25D366' }}>
+            WhatsApp
+          </a>
+          <a href={`mailto:${EMAIL}`} className="no-underline text-[.8rem] font-semibold opacity-75 hover:opacity-100 transition-opacity" style={{ color: '#FAF9F6' }}>
+            {EMAIL}
           </a>
         </div>
 
