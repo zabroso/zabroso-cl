@@ -41,7 +41,7 @@ export default function Incluye() {
         </div>
 
         <div className="rv border-2 border-dashed border-roble p-6" style={{ transitionDelay: '.3s' }}>
-          <p className="text-[.75rem] font-bold uppercase tracking-[.1em] text-terra mb-3">Esto va aparte (lo paga el negocio)</p>
+          <p className="text-[.75rem] font-bold uppercase tracking-[.1em] text-terra mb-3">Los costos de Shopify van aparte (los paga el negocio):</p>
           <ul className="space-y-2">
             {noIncluye.map(n => (
               <li key={n} className="flex items-start gap-2 text-[.85rem] text-muted leading-[1.5]">
