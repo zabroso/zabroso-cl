@@ -3,7 +3,12 @@ import { useState } from 'react'
 const faqs = [
   {
     q: '¿Qué es Shopify y por qué lo usan?',
-    a: 'Shopify es la plataforma más usada del mundo para tiendas online — maneja pagos, inventario y envíos de forma segura y probada. En vez de construir todo eso desde cero, la usamos como base para que tu tienda funcione bien desde el primer día.',
+    a: (
+      <>
+        <a href="https://www.shopify.com" target="_blank" rel="noopener" className="text-terra font-semibold underline">Shopify</a>
+        {' '}es la plataforma más usada del mundo para tiendas online — maneja pagos, inventario y envíos de forma segura y probada. En vez de construir todo eso desde cero, la usamos como base para que tu tienda funcione bien desde el primer día.
+      </>
+    ),
   },
   {
     q: '¿Qué responsabilidad técnica tengo yo?',
