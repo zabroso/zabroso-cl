@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Marca que hay JS: las clases .rv/.rvL/.rvR solo ocultan contenido bajo html.js
+         (ver src/index.css), así el HTML prerenderizado es visible sin JavaScript. -->
+    <script>document.documentElement.classList.add('js')</script>
 
     <!-- ── PRIMARY SEO ── -->
     <title>Política de privacidad | zabroso.cl</title>
@@ -79,12 +82,6 @@
     </script>
   </head>
   <body>
-    <noscript>
-      <div style="max-width:720px;margin:4rem auto;padding:2rem;font-family:Georgia,serif;color:#5D4037">
-        <h1>Política de privacidad — zabroso.cl</h1>
-        <p>Responsable: Pablo Zabroso, Valparaíso, Chile. Los datos del formulario de cotización (nombre, email, teléfono, servicio, mensaje) se usan solo para responder tu cotización. Para consultas o para ejercer tus derechos escribe a <a href="mailto:pablo@zabroso.cl">pablo@zabroso.cl</a>. Última actualización: 11 de septiembre de 2026.</p>
-      </div>
-    </noscript>
 
     <div id="root"></div>
     <script type="module" src="/src/privacidad/main.tsx"></script>

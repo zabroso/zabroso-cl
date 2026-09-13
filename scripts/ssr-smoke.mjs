@@ -15,6 +15,10 @@ import { createServer } from 'vite'
 const EXPECTED_TEXT = {
   main: 'Tu página web',
   ecommerce: 'Tu tienda online',
+  sobre: 'Hola, soy Pablo.',
+  contacto: 'Hablemos de',
+  privacidad: 'Política de privacidad',
+  terminos: 'Términos y condiciones',
 }
 
 const vite = await createServer({

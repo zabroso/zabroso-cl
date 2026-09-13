@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Marca que hay JS: las clases .rv/.rvL/.rvR solo ocultan contenido bajo html.js
+         (ver src/index.css), así el HTML prerenderizado es visible sin JavaScript. -->
+    <script>document.documentElement.classList.add('js')</script>
 
     <!-- ── PRIMARY SEO ── -->
     <title>Términos y condiciones del servicio | zabroso.cl</title>
@@ -79,12 +82,6 @@
     </script>
   </head>
   <body>
-    <noscript>
-      <div style="max-width:720px;margin:4rem auto;padding:2rem;font-family:Georgia,serif;color:#5D4037">
-        <h1>Términos y condiciones — zabroso.cl</h1>
-        <p>Planes Básico $150.000, Regular $250.000 y Avanzado $420.000 (CLP). Pago: 50% de anticipo y 50% a la entrega, o saldo en cuotas por página aprobada. Código y cuentas a nombre del cliente. Garantía de 6 meses sobre defectos de construcción. Consultas a <a href="mailto:pablo@zabroso.cl">pablo@zabroso.cl</a>. Última actualización: 11 de septiembre de 2026.</p>
-      </div>
-    </noscript>
 
     <div id="root"></div>
     <script type="module" src="/src/terminos/main.tsx"></script>

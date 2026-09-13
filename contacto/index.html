@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Marca que hay JS: las clases .rv/.rvL/.rvR solo ocultan contenido bajo html.js
+         (ver src/index.css), así el HTML prerenderizado es visible sin JavaScript. -->
+    <script>document.documentElement.classList.add('js')</script>
 
     <!-- ── PRIMARY SEO ── -->
     <title>Contacto: cotiza tu página web | zabroso.cl</title>
@@ -87,12 +90,6 @@
     </script>
   </head>
   <body>
-    <noscript>
-      <div style="max-width:720px;margin:4rem auto;padding:2rem;font-family:Georgia,serif;color:#5D4037">
-        <h1>Contacto — zabroso.cl</h1>
-        <p>WhatsApp y teléfono: <a href="tel:+56949360955">+56 9 4936 0955</a> · Email: <a href="mailto:pablo@zabroso.cl">pablo@zabroso.cl</a> · Valparaíso, Chile — trabajo remoto para todo el país.</p>
-      </div>
-    </noscript>
 
     <div id="root"></div>
     <script type="module" src="/src/contacto/main.tsx"></script>

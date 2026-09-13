@@ -2,7 +2,7 @@ import { PRECIOS_VIGENTES } from '../../data/site'
 
 export default function Precio() {
   return (
-    <section className="dot-grid py-[5.5rem] px-8">
+    <section id="precio" className="dot-grid py-[5.5rem] px-8">
       <div className="max-w-[1160px] mx-auto">
         <p className="rvL text-[.72rem] font-bold tracking-[.22em] uppercase text-terra mb-2">Precio</p>
         <h2
