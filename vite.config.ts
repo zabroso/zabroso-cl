@@ -10,6 +10,10 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         ecommerce: resolve(__dirname, 'ecommerce/index.html'),
+        sobre: resolve(__dirname, 'sobre/index.html'),
+        contacto: resolve(__dirname, 'contacto/index.html'),
+        privacidad: resolve(__dirname, 'privacidad/index.html'),
+        terminos: resolve(__dirname, 'terminos/index.html'),
       },
     },
   },
