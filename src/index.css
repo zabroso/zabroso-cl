@@ -47,6 +47,40 @@
 .animate-float        { animation: float 3.5s ease-in-out infinite; }
 .animate-pulse-terra  { animation: pulse-terra 2.5s infinite; }
 
+/* ── PROSA LEGAL (/privacidad/, /terminos/) ──
+   El preflight de Tailwind elimina viñetas y márgenes; acá se restauran
+   solo dentro de .legal-body para no tocar el resto del sitio. */
+@layer components {
+  .legal-body h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.35rem;
+    line-height: 1.25;
+    color: #5D4037;
+    margin: 2.75rem 0 .9rem;
+    padding-top: 1.25rem;
+    border-top: 2px solid rgba(93,64,55,.15);
+  }
+  .legal-body h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #5D4037;
+    margin: 1.6rem 0 .5rem;
+  }
+  .legal-body p, .legal-body li { font-size: .92rem; line-height: 1.75; color: #8B7355; }
+  .legal-body p  { margin-bottom: 1rem; }
+  .legal-body ul { list-style: none; margin: 0 0 1.1rem; padding: 0; }
+  .legal-body li { position: relative; padding-left: 1.4rem; margin-bottom: .45rem; }
+  .legal-body li::before { content: '✓'; position: absolute; left: 0; color: #E2725B; font-weight: 700; }
+  .legal-body strong { color: #5D4037; font-weight: 600; }
+  .legal-body a { color: #E2725B; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+  .legal-body a:hover { color: #5D4037; }
+  .legal-body table { width: 100%; border-collapse: collapse; margin: 0 0 1.25rem; font-size: .88rem; }
+  .legal-body th, .legal-body td { text-align: left; vertical-align: top; padding: .6rem .75rem; border: 2px solid #5D4037; color: #8B7355; line-height: 1.55; }
+  .legal-body th { background: #FAF9F6; color: #5D4037; font-family: var(--font-display); font-weight: 700; font-size: .9rem; }
+}
+
 /* ── GLOBAL BASE ──
    Ojo: esto va dentro de @layer base a propósito. Tailwind v4 registra
    utilities en @layer utilities, y el CSS sin capa le gana a CUALQUIER capa
