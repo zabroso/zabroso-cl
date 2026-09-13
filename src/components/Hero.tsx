@@ -34,8 +34,16 @@ export default function Hero() {
             <em className="italic text-terra block">a medida.</em>
           </h1>
 
-          <p className="rv text-[1.05rem] leading-[1.75] text-muted mb-10 max-w-[480px]" style={{ transitionDelay: '.16s' }}>
-            Nada de plantillas ni builders. Código propio en React: más rápida, más segura y con la libertad de diseño que un editor genérico no te da.
+          <ul className="rv text-[.85rem] text-muted leading-[1.6] mb-6 max-w-[480px] space-y-1 list-disc pl-5" style={{ transitionDelay: '.14s' }}>
+            <li>Páginas web a medida en React, sin plantillas ni builders.</li>
+            <li>Desde $150.000, con dominio, hosting y SSL incluidos.</li>
+            <li>Garantía de 6 meses, para pymes y profesionales en todo Chile.</li>
+          </ul>
+
+          <p className="rv text-[1.05rem] leading-[1.75] text-muted mb-10 max-w-[480px]" style={{ transitionDelay: '.18s' }}>
+            Nada de plantillas ni builders. Código propio en{' '}
+            <a href="https://react.dev" target="_blank" rel="noopener" className="text-terra font-semibold underline">React</a>
+            : más rápida, más segura y con la libertad de diseño que un editor genérico no te da.
           </p>
 
           <div className="rv flex gap-4 flex-wrap mb-10" style={{ transitionDelay: '.22s' }}>

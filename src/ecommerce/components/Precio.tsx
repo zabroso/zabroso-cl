@@ -1,3 +1,5 @@
+import { PRECIOS_VIGENTES } from '../../data/site'
+
 export default function Precio() {
   return (
     <section className="dot-grid py-[5.5rem] px-8">
@@ -9,9 +11,10 @@ export default function Precio() {
         >
           Elige cómo pagar.
         </h2>
-        <p className="rvL text-[.97rem] leading-[1.75] text-muted max-w-[560px] mb-12">
+        <p className="rvL text-[.97rem] leading-[1.75] text-muted max-w-[560px] mb-2">
           El mismo proyecto, dos formas de pagarlo. Tú eliges qué te acomoda más.
         </p>
+        <p className="rvL text-[.72rem] text-muted/70 mb-12">Precios vigentes a {PRECIOS_VIGENTES}.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
           <div
@@ -46,6 +49,15 @@ export default function Precio() {
         <p className="rv mt-6 text-[.78rem] text-muted leading-[1.6] max-w-[720px]" style={{ transitionDelay: '.1s' }}>
           En ambos casos, la suscripción de Shopify y las comisiones por cada pago recibido las asume el negocio directamente — nosotros no las cobramos ni las incluimos en el precio.
         </p>
+
+        <div className="rv mt-8 border-2 border-dashed border-roble p-6 md:p-7" style={{ transitionDelay: '.15s' }}>
+          <h3 className="font-[family-name:var(--font-display)] text-[1.1rem] font-bold text-roble mb-1">¿No vendes productos online?</h3>
+          <p className="text-[.85rem] text-muted leading-[1.55]">
+            Si buscas algo más simple, también hacemos{' '}
+            <a href="/" className="text-terra font-semibold underline">páginas web a medida</a>
+            {' '}— landings y sitios corporativos en React.
+          </p>
+        </div>
       </div>
     </section>
   )

@@ -16,7 +16,13 @@ export default function Hero() {
           <em className="italic text-terra block">lista para vender.</em>
         </h1>
 
-        <p className="rv text-[1.05rem] leading-[1.75] text-muted mb-10 max-w-[520px] mx-auto" style={{ transitionDelay: '.16s' }}>
+        <ul className="rv text-left text-[.85rem] text-muted leading-[1.6] mb-6 max-w-[480px] mx-auto space-y-1 list-disc pl-5" style={{ transitionDelay: '.14s' }}>
+          <li>Tienda online a medida en Shopify, sin plantillas genéricas.</li>
+          <li>$92.500/mes × 12 meses, o $750.000 en pago único.</li>
+          <li>Catálogo, pagos y envíos listos para vender.</li>
+        </ul>
+
+        <p className="rv text-[1.05rem] leading-[1.75] text-muted mb-10 max-w-[520px] mx-auto" style={{ transitionDelay: '.18s' }}>
           Catálogo, pagos y envíos funcionando sobre Shopify — la plataforma más sólida para e-commerce, sin reinventar la rueda.
         </p>
 
