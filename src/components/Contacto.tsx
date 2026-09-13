@@ -6,7 +6,20 @@ const servicios = ['Plan Básico', 'Plan Regular', 'Plan Avanzado', 'Más de una
 
 type Status = 'idle' | 'sending' | 'sent' | 'error' | 'not-configured'
 
-export default function Contacto() {
+interface Props {
+  /** id de la sección (ancla). Por defecto `cotizar`, usado por el Nav y Planes. */
+  id?: string
+  eyebrow?: string
+  title?: string
+  intro?: string
+}
+
+export default function Contacto({
+  id = 'cotizar',
+  eyebrow = 'Cotiza tu proyecto',
+  title = 'Cuéntame qué necesitas.',
+  intro = 'Completa el formulario y te respondo directo, sin vueltas.',
+}: Props) {
   const [status, setStatus] = useState<Status>('idle')
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -37,17 +50,17 @@ export default function Contacto() {
   }
 
   return (
-    <section id="cotizar" className="dot-grid py-[5.5rem] px-8">
+    <section id={id} className="dot-grid py-[5.5rem] px-8">
       <div className="max-w-[640px] mx-auto">
-        <p className="rvL text-[.72rem] font-bold tracking-[.22em] uppercase text-terra mb-2">Cotiza tu proyecto</p>
+        <p className="rvL text-[.72rem] font-bold tracking-[.22em] uppercase text-terra mb-2">{eyebrow}</p>
         <h2
           className="rvL font-[family-name:var(--font-display)] font-black text-roble mb-3 leading-tight"
           style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}
         >
-          Cuéntame qué necesitas.
+          {title}
         </h2>
         <p className="rvL text-[.97rem] leading-[1.75] text-muted mb-10">
-          Completa el formulario y te respondo directo, sin vueltas.
+          {intro}
         </p>
 
         {status === 'sent' ? (
