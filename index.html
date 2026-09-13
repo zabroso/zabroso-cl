@@ -59,26 +59,67 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "Person",
+          "@id": "https://zabroso.cl/#pablo-zabroso",
+          "name": "Pablo Zabroso",
+          "url": "https://zabroso.cl/",
+          "jobTitle": "Desarrollador web",
+          "sameAs": ["https://github.com/zabroso"],
+          "knowsAbout": ["React", "TypeScript", "Desarrollo web", "Shopify"]
+        },
+        {
           "@type": "ProfessionalService",
           "@id": "https://zabroso.cl/#business",
           "name": "zabroso.cl",
           "description": "Desarrollo de páginas web a medida en React, sin plantillas ni builders. Incluye dominio, hosting y SSL gestionados.",
           "url": "https://zabroso.cl/",
           "email": "pablo@zabroso.cl",
-          "founder": { "@type": "Person", "name": "Pablo Zabroso", "url": "https://zabroso.cl/" },
+          "telephone": "+56949360955",
+          "founder": { "@id": "https://zabroso.cl/#pablo-zabroso" },
           "areaServed": { "@type": "Country", "name": "Chile" },
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Valparaíso",
             "addressCountry": "CL"
           },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+56949360955",
+            "email": "pablo@zabroso.cl",
+            "availableLanguage": ["es"]
+          },
           "priceRange": "$$",
           "image": "https://zabroso.cl/og-image.png",
           "sameAs": ["https://github.com/zabroso"],
           "makesOffer": [
-            { "@type": "Offer", "name": "Plan Básico", "price": "150000", "priceCurrency": "CLP" },
-            { "@type": "Offer", "name": "Plan Regular", "price": "250000", "priceCurrency": "CLP" },
-            { "@type": "Offer", "name": "Plan Avanzado", "price": "420000", "priceCurrency": "CLP" }
+            {
+              "@type": "Offer",
+              "name": "Plan Básico",
+              "price": "150000",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock",
+              "url": "https://zabroso.cl/#planes",
+              "description": "Landing de una sola sección: tu flyer digital con un objetivo único."
+            },
+            {
+              "@type": "Offer",
+              "name": "Plan Regular",
+              "price": "250000",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock",
+              "url": "https://zabroso.cl/#planes",
+              "description": "Landing completa de conversión, lista para recibir tráfico de campañas."
+            },
+            {
+              "@type": "Offer",
+              "name": "Plan Avanzado",
+              "price": "420000",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock",
+              "url": "https://zabroso.cl/#planes",
+              "description": "Landing premium: más larga, con animaciones e interacciones a medida."
+            }
           ]
         },
         {
@@ -90,6 +131,16 @@
           "publisher": { "@id": "https://zabroso.cl/#business" }
         },
         {
+          "@type": "WebPage",
+          "@id": "https://zabroso.cl/#webpage",
+          "url": "https://zabroso.cl/",
+          "name": "Páginas Web a Medida desde $150.000 | zabroso.cl",
+          "isPartOf": { "@id": "https://zabroso.cl/#website" },
+          "about": { "@id": "https://zabroso.cl/#business" },
+          "inLanguage": "es-CL",
+          "dateModified": "2026-09-11"
+        },
+        {
           "@type": "BreadcrumbList",
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zabroso.cl/" },
@@ -97,6 +148,116 @@
             { "@type": "ListItem", "position": 3, "name": "Cómo funciona", "item": "https://zabroso.cl/#proceso" },
             { "@type": "ListItem", "position": 4, "name": "Preguntas frecuentes", "item": "https://zabroso.cl/#faq" },
             { "@type": "ListItem", "position": 5, "name": "Cotizar", "item": "https://zabroso.cl/#cotizar" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://zabroso.cl/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Qué responsabilidad técnica tengo yo como cliente?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ninguna. Tú solo contratas, creas las cuentas que se necesitan (GitHub, Cloudflare y NIC.cl si compras el dominio tú mismo) y validas lo que te vamos entregando — que el diseño te guste, que el dominio sea el correcto. Todo lo técnico — código, configuración, publicación — corre por nuestra cuenta."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo quedan las cuentas de GitHub y Cloudflare?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Todo a tu nombre, nunca al nuestro. En GitHub creamos una organización para tu proyecto, tú quedas como dueño y nos das acceso de colaborador para trabajar ahí. En Cloudflare la cuenta la creas tú y nos invitas como colaboradores — ahí vive tu dominio, y si hay que pagar algo (como el dominio) lo haces con tu propia tarjeta dentro de tu cuenta. Nosotros solo trabajamos sobre lo que ya es tuyo."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿El dominio está incluido en el precio?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Gestionamos todo el trámite, pero la compra y una eventual transferencia las paga el cliente — nunca están incluidas en el plan. Para un dominio .cl hay dos formas: creas tu cuenta en NIC.cl y nos das acceso para que compremos y configuremos todo directamente ahí, o lo compramos nosotros primero y después hacemos el traspaso para que quede a tu nombre."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿El hosting tiene costo?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Tu página se aloja en Cloudflare Pages, que es gratuito por naturaleza — no es un costo que nosotros paguemos ni te cobremos."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo se paga el proyecto?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Dos formas: 50% al arrancar y 50% a la entrega, o 50% de anticipo y el saldo distribuido a medida que se entrega y aprueba cada página. El trabajo comienza al recibir el anticipo; si hay un atraso en un pago, el trabajo se pausa hasta regularizarlo. La boleta de honorarios se emite a nombre de quien paga."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué pasa después del primer año?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La renovación del dominio (≈ $12.000 al año) la paga el cliente. El hosting en Cloudflare sigue siendo gratis, todos los años."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué cubre la garantía de 6 meses?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Defectos de construcción: algo que se rompe por cómo se construyó la página. No cubre cambios de contenido ni nuevos requerimientos, y no se agota si la usas — sigue vigente durante todo el período."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Puedo pedir más rondas de revisión?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Cada plan incluye 3 rondas. Una ronda extra tiene un costo de $20.000."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Pueden redactar los textos por mí?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Investigamos y creamos textos e imágenes cuando aún no los tienes listos — valor a cotizar según el alcance."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Hacen descuento si pido varias páginas?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, a criterio según la cantidad de páginas y el contexto. Cuéntanos en el formulario de cotización y lo revisamos juntos."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Tienen mantención mensual?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Es opcional: $30.000 al mes, con 3 tickets de cambios y hasta 10 horas totales. Si no la contratas, igual conversamos ante cualquier necesidad puntual — lo simple se resuelve sin costo, lo más complejo se cotiza antes de hacerlo."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Hacen tiendas online / e-commerce?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, pero es un servicio aparte con su propio precio y forma de pago — lo vas a encontrar en la sección de e-commerce."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Hacen otro tipo de desarrollo, no solo páginas web?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Software a medida, SaaS, IA o automatizaciones no son parte de este servicio — esos proyectos viven en cuzmar.cl."
+              }
+            }
           ]
         }
       ]
