@@ -6,11 +6,36 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 npm run dev      # Dev server → http://localhost:5173
-npm run build    # Typecheck (tsc -b) + Vite bundle → dist/
+npm run build    # Typecheck (tsc -b) + Vite bundle → dist/ + prerender (scripts/prerender.mjs)
+npm run prerender # Solo el paso de prerender sobre un dist/ ya construido
+npm run ssr:smoke # Renderiza cada página por SSR en memoria (dev server), sin build
+npm test         # Tests de los helpers de prerender (node --test scripts/)
 npm run preview  # Serve dist/ locally
 npm run lint     # ESLint
 npx tsc --noEmit # Type-check only, no output
 ```
+
+## Prerender (SEO)
+
+El build genera HTML estático por página con `renderToString` (React SSR) y el
+cliente lo hidrata (`src/mount.tsx`: `hydrateRoot` si `#root` tiene hijos,
+`createRoot` en `vite dev`). Convención genérica sobre las entradas de
+`build.rollupOptions.input`:
+
+| pageId    | HTML de entrada       | App                    |
+|-----------|-----------------------|------------------------|
+| `main`    | `index.html`          | `src/App.tsx`          |
+| `<dir>`   | `<dir>/index.html`    | `src/<dir>/App.tsx`    |
+
+`src/entry-server.tsx` descubre las Apps con `import.meta.glob('./**/App.tsx')`.
+Para una página nueva: crear `<dir>/index.html` (copiar el `<script>` inline que
+agrega `html.js` en el `<head>`) + `src/<dir>/App.tsx` + `src/<dir>/main.tsx`
+(`mount(<App />)`), registrar la entrada en `vite.config.ts` y agregar el texto
+esperado en `scripts/ssr-smoke.mjs`.
+
+Reglas SSR: nada de `window`/`document`/`IntersectionObserver`/`Math.random`/
+`Date` en módulo o render — solo dentro de `useEffect` o handlers. El primer
+render en cliente debe ser idéntico al del servidor (sin leer viewport en render).
 
 ## Stack
 
