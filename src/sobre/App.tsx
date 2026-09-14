@@ -106,6 +106,12 @@ export default function App() {
                   Ver planes
                 </a>
               </div>
+              <p className="rvL text-[.8rem] text-muted mt-6">
+                Perfiles:{' '}
+                <a href="https://github.com/zabroso" target="_blank" rel="me noopener noreferrer" className="text-terra font-semibold underline underline-offset-2 hover:text-roble">GitHub</a>
+                {' · '}
+                <a href="https://www.linkedin.com/in/pablo-marambio" target="_blank" rel="me noopener noreferrer" className="text-terra font-semibold underline underline-offset-2 hover:text-roble">LinkedIn</a>
+              </p>
             </div>
 
             <div className="rvR flex justify-center items-center relative">

@@ -6,6 +6,7 @@ export const PHONE_TEL = 'tel:+56949360955'
 export const WHATSAPP_URL = 'https://wa.me/56949360955?text=Hola%2C%20quiero%20cotizar'
 export const EMAIL = 'pablo@zabroso.cl'
 export const GITHUB_URL = 'https://github.com/zabroso'
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/pablo-marambio'
 export const LOCATION = 'Valparaíso, Chile'
 
 /** Mes y año hasta el cual están vigentes los precios publicados. */

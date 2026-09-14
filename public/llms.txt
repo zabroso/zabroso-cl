@@ -12,7 +12,7 @@ zabroso.cl es el sitio de Pablo Zabroso, desarrollador de software basado en Val
 
 Todos los planes incluyen: gestión y configuración del dominio (la compra la paga el cliente), publicación en Cloudflare Pages (hosting gratuito), certificado SSL, puesta en producción, accesos entregados a nombre del cliente, acompañamiento técnico, 3 rondas de revisión y garantía de 6 meses sobre defectos de construcción.
 
-Mantención mensual opcional: $30.000 al mes, con 3 tickets de cambios y hasta 10 horas totales de trabajo.
+Mantención mensual opcional: $30.000 al mes, con 3 tickets de cambios de hasta 10 horas cada uno (30 horas al mes). No acumulables; también sirve para corregir errores en sitios ya publicados.
 
 ## Tiendas online (e-commerce)
 

@@ -192,10 +192,10 @@ export default function App() {
 
       <h2>10. Mantención mensual (opcional)</h2>
       <p>
-        Por <strong>$30.000 al mes</strong> el cliente dispone de <strong>3 tickets de cambios</strong> y hasta{' '}
-        <strong>10 horas totales</strong> de trabajo mensual para cambios de textos e imágenes y correcciones menores.
-        Los tickets y horas <strong>no se acumulan</strong>: cada mes parte con 3 tickets y 10 horas nuevas, y lo no
-        usado vence al cierre del mes. La mantención también puede usarse para resolver errores en páginas que el
+        Por <strong>$30.000 al mes</strong> el cliente dispone de <strong>3 tickets de cambios</strong>, cada uno de hasta{' '}
+        <strong>10 horas</strong> de trabajo (30 horas al mes en total), para cambios de textos e imágenes y
+        correcciones menores. Los tickets y horas <strong>no se acumulan</strong>: cada mes parte con 3 tickets nuevos,
+        y lo no usado vence al cierre del mes. La mantención también puede usarse para resolver errores en páginas que el
         cliente ya tenga publicadas, aunque no las haya construido zabroso.cl. Si no se contrata, ante una necesidad puntual primero conversamos: lo simple se resuelve sin costo, lo más
         complejo se cotiza antes de hacerlo.
       </p>
@@ -234,11 +234,11 @@ export default function App() {
 
       <h2>12. Cancelación</h2>
       <p>
-        {/* TODO(pablo): confirmar política de cancelación y reembolso del anticipo */}
-        El cliente puede cancelar el proyecto en cualquier momento avisando por escrito. El anticipo cubre el trabajo
-        ya realizado hasta ese momento y no se reembolsa; si el trabajo avanzado supera el anticipo, se cotiza la
-        diferencia y se entrega lo construido hasta la fecha. Si soy yo quien no puede continuar con el proyecto,
-        devuelvo la parte del anticipo que corresponda al trabajo no realizado.
+        El anticipo <strong>reserva el cupo de desarrollo</strong> y asegura que el proyecto se ejecute; por eso,
+        una vez pagado, <strong>no es reembolsable</strong>. El cliente puede cancelar el proyecto en cualquier momento
+        avisando por escrito: el anticipo cubre el trabajo realizado hasta ese momento y se entrega lo construido a la
+        fecha; si el trabajo avanzado supera el anticipo, se cotiza la diferencia. Si soy yo quien no puede continuar
+        con el proyecto, devuelvo la parte del anticipo que corresponda al trabajo no realizado.
       </p>
       <p>
         Si el cliente deja de responder durante más de <strong>30 días</strong> sin aviso, el proyecto se considera

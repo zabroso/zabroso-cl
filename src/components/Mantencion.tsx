@@ -1,6 +1,6 @@
 const incluye = [
   '3 tickets de cambios al mes',
-  'Hasta 10 horas totales de trabajo',
+  'Hasta 10 horas de trabajo por ticket',
   'Cambios de textos e imágenes',
   'Correcciones menores',
 ]
