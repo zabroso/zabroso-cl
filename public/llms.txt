@@ -1,6 +1,6 @@
 # zabroso.cl
 
-> Desarrollo de páginas web a medida en React, sin plantillas ni builders. Planes desde $150.000 CLP, con dominio, hosting y SSL gestionados, y 6 meses de garantía. También ofrecemos tiendas online sobre Shopify en un servicio aparte.
+> Desarrollo de páginas web a medida en React, sin plantillas ni builders. Planes desde $150.000 CLP; gestionamos dominio, hosting y SSL (la compra del dominio la paga el cliente, el hosting es gratuito), con 6 meses de garantía. También ofrecemos tiendas online sobre Shopify en un servicio aparte.
 
 zabroso.cl es el sitio de Pablo Zabroso, desarrollador de software basado en Valparaíso, Chile. El servicio principal es la creación de páginas web (landings) con código propio en React — sin plantillas ni builders — pensadas para conversión.
 

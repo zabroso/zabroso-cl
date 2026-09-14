@@ -36,7 +36,7 @@ export default function Hero() {
 
           <ul className="rv text-[.85rem] text-muted leading-[1.6] mb-6 max-w-[480px] space-y-1 list-disc pl-5" style={{ transitionDelay: '.14s' }}>
             <li>Páginas web a medida en React, sin plantillas ni builders.</li>
-            <li>Desde $150.000, con dominio, hosting y SSL incluidos.</li>
+            <li>Desde $150.000. Gestionamos dominio, hosting y SSL; la compra del dominio la paga el cliente.</li>
             <li>Garantía de 6 meses, para pymes y profesionales en todo Chile.</li>
           </ul>
 

@@ -25,7 +25,7 @@ const principios = [
   {
     icon: '💬',
     name: 'Cero responsabilidad técnica para ti',
-    desc: 'Tú validas diseño y contenido. Código, configuración, dominio, SSL y publicación corren por mi cuenta.',
+    desc: 'Tú validas diseño y contenido. Código, configuración del dominio, SSL y publicación los hago yo; la compra del dominio la pagas tú.',
   },
 ]
 
