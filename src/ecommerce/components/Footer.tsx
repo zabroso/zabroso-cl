@@ -1,3 +1,15 @@
+import { EMAIL, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from '../../data/site'
+
+const linkCls = 'no-underline text-[.8rem] font-semibold opacity-75 hover:opacity-100 transition-opacity'
+const legalCls = 'no-underline text-[.72rem] font-medium opacity-60 hover:opacity-100 transition-opacity'
+
+const legal: [string, string][] = [
+  ['/sobre/', 'Sobre Pablo'],
+  ['/contacto/', 'Contacto'],
+  ['/privacidad/', 'Privacidad'],
+  ['/terminos/', 'Términos y condiciones'],
+]
+
 export default function Footer() {
   return (
     <footer className="py-10 px-8 bg-roble">
@@ -6,20 +18,38 @@ export default function Footer() {
           zabroso<span className="text-terra">.cl</span>
         </a>
 
-        <div className="flex gap-8 flex-wrap">
-          <a href="/" className="no-underline text-[.8rem] font-semibold opacity-75 hover:opacity-100 transition-opacity" style={{ color: '#FAF9F6' }}>
+        <div className="flex gap-8 flex-wrap items-center">
+          <a href="/" className={linkCls} style={{ color: '#FAF9F6' }}>
             Páginas web
           </a>
-          <a href="#faq" className="no-underline text-[.8rem] font-semibold opacity-75 hover:opacity-100 transition-opacity" style={{ color: '#FAF9F6' }}>
+          <a href="#faq" className={linkCls} style={{ color: '#FAF9F6' }}>
             FAQ
           </a>
-          <a href="mailto:pablo@zabroso.cl" className="no-underline text-[.8rem] font-semibold opacity-75 hover:opacity-100 transition-opacity" style={{ color: '#FAF9F6' }}>
-            pablo@zabroso.cl
+          <a href={PHONE_TEL} className={linkCls} style={{ color: '#FAF9F6' }}>
+            {PHONE_DISPLAY}
+          </a>
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="no-underline text-[.8rem] font-bold px-3 py-1" style={{ color: '#FAF9F6', background: '#25D366' }}>
+            WhatsApp
+          </a>
+          <a href={`mailto:${EMAIL}`} className={linkCls} style={{ color: '#FAF9F6' }}>
+            {EMAIL}
           </a>
         </div>
 
         <span className="text-[.78rem] opacity-50" style={{ color: '#FAF9F6' }}>zabroso.cl · Chile · 2026</span>
       </div>
+
+      <nav
+        aria-label="Información y legal"
+        className="max-w-[1160px] mx-auto mt-6 pt-5 flex flex-wrap gap-x-6 gap-y-2"
+        style={{ borderTop: '1px solid rgba(250,249,246,.15)' }}
+      >
+        {legal.map(([href, label]) => (
+          <a key={href} href={href} className={legalCls} style={{ color: '#FAF9F6' }}>
+            {label}
+          </a>
+        ))}
+      </nav>
     </footer>
   )
 }

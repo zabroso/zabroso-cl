@@ -1,0 +1,35 @@
+# zabroso.cl
+
+> Desarrollo de páginas web a medida en React, sin plantillas ni builders. Planes desde $150.000 CLP, con dominio, hosting y SSL gestionados, y 6 meses de garantía. También ofrecemos tiendas online sobre Shopify en un servicio aparte.
+
+zabroso.cl es el sitio de Pablo Zabroso, desarrollador de software basado en Valparaíso, Chile. El servicio principal es la creación de páginas web (landings) con código propio en React — sin plantillas ni builders — pensadas para conversión.
+
+## Planes de páginas web
+
+- [Plan Básico — $150.000](https://zabroso.cl/#planes): landing de una sola sección, mensaje central y llamado a la acción.
+- [Plan Regular — $250.000](https://zabroso.cl/#planes): landing completa multisección, lista para recibir tráfico de campañas.
+- [Plan Avanzado — $420.000](https://zabroso.cl/#planes): landing premium con animaciones e interacciones a medida.
+
+Todos los planes incluyen: gestión y configuración del dominio (la compra la paga el cliente), publicación en Cloudflare Pages (hosting gratuito), certificado SSL, puesta en producción, accesos entregados a nombre del cliente, acompañamiento técnico, 3 rondas de revisión y garantía de 6 meses sobre defectos de construcción.
+
+Mantención mensual opcional: $30.000 al mes, con 3 tickets de cambios de hasta 10 horas cada uno (30 horas al mes). No acumulables; también sirve para corregir errores en sitios ya publicados.
+
+## Tiendas online (e-commerce)
+
+- [Tienda online sobre Shopify](https://zabroso.cl/ecommerce/): diseño de tienda a medida, catálogo de productos y variantes, pasarela de pagos y métodos de envío, cuentas a nombre del cliente.
+- Precio: $92.500 al mes durante 12 meses (mantención del primer año incluida) o $750.000 en pago único (sin mantención).
+- La suscripción mensual de Shopify y las comisiones por cada pago recibido las asume el negocio directamente.
+
+## Contacto
+
+- Email: [pablo@zabroso.cl](mailto:pablo@zabroso.cl)
+- Teléfono / WhatsApp: +56 9 4936 0955
+- GitHub: [github.com/zabroso](https://github.com/zabroso)
+- Ubicación: Valparaíso, Chile
+
+## Optional
+
+- [Preguntas frecuentes — páginas web](https://zabroso.cl/#faq)
+- [Preguntas frecuentes — e-commerce](https://zabroso.cl/ecommerce/#faq)
+- [Cotizar página web](https://zabroso.cl/#cotizar)
+- [Cotizar tienda online](https://zabroso.cl/ecommerce/#cotizar)

@@ -1,3 +1,5 @@
+import { PRECIOS_VIGENTES } from '../data/site'
+
 interface Plan {
   name: string
   price: string
@@ -62,6 +64,7 @@ export default function Planes() {
         <p className="rvL text-[.97rem] leading-[1.75] text-muted max-w-[560px] mb-12">
           Tres planes según la complejidad de tu página.
         </p>
+        <p className="rvL text-[.72rem] text-muted/70 mb-8">Precios vigentes a {PRECIOS_VIGENTES}.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {planes.map((p, i) => (

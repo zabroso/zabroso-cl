@@ -1,0 +1,8 @@
+# zabroso.cl — robots.txt propio (el gestionado de Cloudflare está desactivado).
+# Content Signals (https://contentsignals.org): permitimos búsqueda y uso como
+# contexto para respuestas de IA (citas), no entrenamiento de modelos.
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+
+Sitemap: https://zabroso.cl/sitemap.xml

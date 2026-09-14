@@ -2,6 +2,7 @@ import './index.css'
 import { useReveal } from './hooks/useReveal'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import ProofStats from './components/ProofStats'
 import ValueProps from './components/ValueProps'
 import Planes from './components/Planes'
 import Incluido from './components/Incluido'
@@ -18,15 +19,18 @@ export default function App() {
   return (
     <>
       <Nav />
-      <Hero />
-      <ValueProps />
-      <Planes />
-      <Incluido />
-      <Mantencion />
-      <ComoFunciona />
-      <Trabajos />
-      <FAQ />
-      <Contacto />
+      <main>
+        <Hero />
+        <ProofStats />
+        <ValueProps />
+        <Planes />
+        <Incluido />
+        <Mantencion />
+        <ComoFunciona />
+        <Trabajos />
+        <FAQ />
+        <Contacto />
+      </main>
       <Footer />
     </>
   )

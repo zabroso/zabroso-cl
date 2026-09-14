@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 
+// Anclas absolutas: este Nav se comparte con /sobre/, /contacto/, /privacidad/ y /terminos/.
 const links: [string, string][] = [
-  ['#planes', 'Planes'],
-  ['#proceso', 'Cómo funciona'],
-  ['#faq', 'FAQ'],
-  ['#cotizar', 'Cotizar'],
+  ['/#planes', 'Planes'],
+  ['/#proceso', 'Cómo funciona'],
+  ['/#faq', 'FAQ'],
+  ['/#cotizar', 'Cotizar'],
 ]
 
 export default function Nav() {
@@ -22,9 +23,9 @@ export default function Nav() {
       style={{ boxShadow: scrolled ? '0 2px 24px rgba(93,64,55,.12)' : 'none' }}
       aria-label="Navegación principal"
     >
-      <div className="font-[family-name:var(--font-display)] font-black text-xl text-roble tracking-tight">
+      <a href="/" className="no-underline font-[family-name:var(--font-display)] font-black text-xl text-roble tracking-tight">
         zabroso<span className="text-terra">.cl</span>
-      </div>
+      </a>
 
       <ul className="hidden md:flex gap-8 list-none">
         {links.map(([href, label]) => (
@@ -49,7 +50,7 @@ export default function Nav() {
         </a>
 
         <a
-          href="#cotizar"
+          href="/#cotizar"
           className="inline-block px-6 py-2 text-[.82rem] font-bold tracking-[.06em] uppercase text-white no-underline transition-[box-shadow,transform]"
           style={{ background: '#E2725B', boxShadow: '3px 3px 0 #3E2723' }}
           aria-label="Cotizar tu página web"

@@ -1,15 +1,8 @@
 import { useState } from 'react'
-
-const project = {
-  tag: 'Contenidos · Astro',
-  name: 'Red de Contenidos',
-  desc: 'Ecosistema de sitios de contenido construidos con Astro: digitalismo.cl, edukaizen.cl, megaradios.cl. SEO técnico de alto rendimiento y carga instantánea.',
-  bg: ['#DDE8DD', '#C9D9C9'],
-  label: 'web · contenido · SEO',
-}
+import { casos } from '../data/proof'
 
 export default function Trabajos() {
-  const [open, setOpen] = useState(false)
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
     <section id="trabajos" className="py-[5.5rem] px-8 bg-white">
@@ -25,46 +18,59 @@ export default function Trabajos() {
           Casos reales de este servicio. Código propio, sin plantillas.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {/* Featured project */}
-          <div
-            className="rv border-2 border-roble bg-cream overflow-hidden cursor-pointer transition-[transform,box-shadow]"
-            style={{ boxShadow: '4px 4px 0 #5D4037' }}
-            onClick={() => setOpen(o => !o)}
-            onMouseEnter={e => {
-              e.currentTarget.style.transform = 'translate(-3px,-3px)'
-              e.currentTarget.style.boxShadow = '7px 7px 0 #5D4037'
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.transform = ''
-              e.currentTarget.style.boxShadow = '4px 4px 0 #5D4037'
-            }}
-          >
-            <div
-              className="h-[180px] flex items-center justify-center font-mono text-[.78rem] text-[#999] text-center p-4"
-              style={{ background: `repeating-linear-gradient(45deg,${project.bg[0]},${project.bg[0]} 10px,${project.bg[1]} 10px,${project.bg[1]} 20px)` }}
-            >
-              <span>[ {project.label} ]</span>
-            </div>
-            <div className="p-5 pb-6">
-              <p className="text-[.68rem] font-bold tracking-[.14em] uppercase text-terra mb-[.35rem]">{project.tag}</p>
-              <h3 className="font-[family-name:var(--font-display)] text-[1.3rem] font-bold text-roble mb-[.3rem]">{project.name}</h3>
-              <p
-                className="text-[.85rem] text-muted leading-[1.6] overflow-hidden transition-[max-height,margin] duration-400"
-                style={{ maxHeight: open ? '160px' : '0', marginTop: open ? '.4rem' : 0 }}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {casos.map((project, i) => {
+            const open = openIndex === i
+            return (
+              <div
+                key={project.name}
+                className="rv relative border-2 border-roble bg-cream overflow-hidden cursor-pointer transition-[transform,box-shadow]"
+                style={{ boxShadow: '4px 4px 0 #5D4037', transitionDelay: `${i * .05}s` }}
+                onClick={() => setOpenIndex(open ? null : i)}
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = 'translate(-3px,-3px)'
+                  e.currentTarget.style.boxShadow = '7px 7px 0 #5D4037'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = ''
+                  e.currentTarget.style.boxShadow = '4px 4px 0 #5D4037'
+                }}
               >
-                {project.desc}
-              </p>
-              <span className="block text-[.72rem] text-terra font-bold mt-[.6rem]">
-                {open ? '← cerrar' : 'ver más →'}
-              </span>
-            </div>
-          </div>
+                {project.placeholder && (
+                  <span
+                    className="absolute top-2 right-2 z-10 px-2 py-[.2rem] text-[.62rem] font-bold uppercase tracking-[.08em] text-white"
+                    style={{ background: '#8D6E63' }}
+                  >
+                    Ejemplo
+                  </span>
+                )}
+                <div
+                  className="h-[180px] flex items-center justify-center font-mono text-[.78rem] text-[#999] text-center p-4"
+                  style={{ background: `repeating-linear-gradient(45deg,${project.bg[0]},${project.bg[0]} 10px,${project.bg[1]} 10px,${project.bg[1]} 20px)` }}
+                >
+                  <span>[ {project.label} ]</span>
+                </div>
+                <div className="p-5 pb-6">
+                  <p className="text-[.68rem] font-bold tracking-[.14em] uppercase text-terra mb-[.35rem]">{project.tag}</p>
+                  <h3 className="font-[family-name:var(--font-display)] text-[1.3rem] font-bold text-roble mb-[.3rem]">{project.name}</h3>
+                  <p
+                    className="text-[.85rem] text-muted leading-[1.6] overflow-hidden transition-[max-height,margin] duration-400"
+                    style={{ maxHeight: open ? '160px' : '0', marginTop: open ? '.4rem' : 0 }}
+                  >
+                    {project.desc}
+                  </p>
+                  <span className="block text-[.72rem] text-terra font-bold mt-[.6rem]">
+                    {open ? '← cerrar' : 'ver más →'}
+                  </span>
+                </div>
+              </div>
+            )
+          })}
 
           {/* Redirect to cuzmar.cl for custom dev */}
           <div
             className="rv border-2 border-dashed border-roble p-6 flex flex-col justify-center"
-            style={{ transitionDelay: '.1s' }}
+            style={{ transitionDelay: '.15s' }}
           >
             <p className="text-[.68rem] font-bold tracking-[.14em] uppercase text-terra mb-[.5rem]">¿Buscas otra cosa?</p>
             <h3 className="font-[family-name:var(--font-display)] text-[1.2rem] font-bold text-roble mb-2 leading-snug">

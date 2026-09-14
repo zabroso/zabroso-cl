@@ -43,11 +43,16 @@ const faqs = [
   },
   {
     q: '¿Tienen mantención mensual?',
-    a: 'Es opcional: $30.000 al mes, con 3 tickets de cambios y hasta 10 horas totales. Si no la contratas, igual conversamos ante cualquier necesidad puntual — lo simple se resuelve sin costo, lo más complejo se cotiza antes de hacerlo.',
+    a: 'Es opcional: $30.000 al mes, con 3 tickets de cambios de hasta 10 horas cada uno (30 horas al mes en total). Si no la contratas, igual conversamos ante cualquier necesidad puntual — lo simple se resuelve sin costo, lo más complejo se cotiza antes de hacerlo.',
   },
   {
     q: '¿Hacen tiendas online / e-commerce?',
-    a: 'Sí, pero es un servicio aparte con su propio precio y forma de pago — lo vas a encontrar en la sección de e-commerce.',
+    a: (
+      <>
+        Sí, pero es un servicio aparte con su propio precio y forma de pago — conoce el detalle en{' '}
+        <a href="/ecommerce/" className="text-terra font-semibold underline">tienda online a medida en Shopify</a>.
+      </>
+    ),
   },
   {
     q: '¿Hacen otro tipo de desarrollo, no solo páginas web?',
