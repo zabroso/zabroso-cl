@@ -25,7 +25,7 @@ export default function Contacto() {
     try {
       const res = await fetch(WEBHOOK_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify(Object.fromEntries(data.entries())),
       })
       if (!res.ok) throw new Error('respuesta no ok')
