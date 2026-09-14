@@ -2,8 +2,8 @@ import '../index.css'
 import { useReveal } from '../hooks/useReveal'
 import LegalPage from '../components/LegalPage'
 
-const UPDATED = '11 de septiembre de 2026'
-const UPDATED_ISO = '2026-09-11'
+const UPDATED = '14 de septiembre de 2026'
+const UPDATED_ISO = '2026-09-14'
 
 export default function App() {
   useReveal()
