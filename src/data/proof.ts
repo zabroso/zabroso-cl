@@ -3,8 +3,8 @@
 export const proofStats = {
   /** TODO(pablo): reemplazar con la cifra real de sitios entregados. */
   sitiosEntregados: 12,
-  /** TODO(pablo): reemplazar con el plazo típico real, en días. */
-  entregaTipicaDias: 10,
+  /** Confirmado por Pablo: una página puede estar lista desde una semana si el cliente tiene el contenido claro. */
+  entregaTipicaDias: 7,
   /** Este valor SÍ es real: la garantía de 6 meses está confirmada en el FAQ. */
   garantiaMeses: 6,
 }

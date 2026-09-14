@@ -95,8 +95,9 @@ export default function App() {
         <li><strong>Publicación.</strong> Se configura el dominio, se sube a producción y se entregan los accesos.</li>
       </ul>
       <p>
-        {/* TODO(pablo): confirmar plazo de entrega por plan (el sitio solo dice "lista en semanas") */}
-        El plazo estimado se indica en la cotización de cada proyecto y se cuenta desde que se recibe el anticipo
+        Como referencia, una página puede estar lista <strong>desde una semana</strong> cuando el cliente ya tiene
+        claro qué quiere: textos, paleta de colores y referencias de cómo le gustaría que se viera. El plazo
+        definitivo se indica en la cotización de cada proyecto y se cuenta desde que se recibe el anticipo
         <strong> y</strong> el contenido completo. Los plazos dependen de la entrega oportuna de contenido y de la
         respuesta a cada ronda de revisión por parte del cliente; los atrasos en esos puntos extienden el plazo en la
         misma proporción.
@@ -111,10 +112,7 @@ export default function App() {
         <li>El trabajo comienza al recibir el anticipo.</li>
         <li>Si hay un atraso en un pago, el trabajo se pausa hasta regularizarlo.</li>
         <li>Se emite <strong>boleta de honorarios</strong> a nombre de quien paga.</li>
-        <li>
-          {/* TODO(pablo): confirmar medios de pago aceptados (transferencia, otros) */}
-          El medio de pago se acuerda en la cotización.
-        </li>
+        <li>El medio de pago es <strong>transferencia bancaria</strong>. Los datos se entregan junto con la cotización.</li>
       </ul>
 
       <h2>5. Revisiones</h2>
@@ -196,8 +194,9 @@ export default function App() {
       <p>
         Por <strong>$30.000 al mes</strong> el cliente dispone de <strong>3 tickets de cambios</strong> y hasta{' '}
         <strong>10 horas totales</strong> de trabajo mensual para cambios de textos e imágenes y correcciones menores.
-        {/* TODO(pablo): confirmar si tickets/horas no usados se acumulan al mes siguiente */}
-        Si no se contrata, ante una necesidad puntual primero conversamos: lo simple se resuelve sin costo, lo más
+        Los tickets y horas <strong>no se acumulan</strong>: cada mes parte con 3 tickets y 10 horas nuevas, y lo no
+        usado vence al cierre del mes. La mantención también puede usarse para resolver errores en páginas que el
+        cliente ya tenga publicadas, aunque no las haya construido zabroso.cl. Si no se contrata, ante una necesidad puntual primero conversamos: lo simple se resuelve sin costo, lo más
         complejo se cotiza antes de hacerlo.
       </p>
 
@@ -226,8 +225,10 @@ export default function App() {
           descripciones y precios; se estima en la cotización.
         </li>
         <li>
-          {/* TODO(pablo): confirmar qué pasa si el cliente deja de pagar la cuota mensual antes de los 12 meses */}
-          En la modalidad mensual, el atraso en una cuota pausa la mantención hasta regularizar el pago.
+          <strong>La modalidad mensual es un compromiso de 12 cuotas.</strong> Si el negocio deja de pagar antes de
+          completarlas, el servicio se suspende: se detiene la mantención y el soporte, y no se entregan trabajos
+          pendientes hasta regularizar el pago. Cumplidas las 12 cuotas, termina el servicio incluido; la mantención
+          posterior se contrata aparte.
         </li>
       </ul>
 

@@ -2,7 +2,7 @@ import { proofStats } from '../data/proof'
 
 const stats = [
   { label: 'Sitios entregados', value: `${proofStats.sitiosEntregados}+` },
-  { label: 'Entrega típica', value: `${proofStats.entregaTipicaDias} días` },
+  { label: 'Entrega', value: `desde ${proofStats.entregaTipicaDias} días` },
   { label: 'Garantía', value: `${proofStats.garantiaMeses} meses` },
 ]
 

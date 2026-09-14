@@ -71,9 +71,9 @@ export default function App() {
 
       <h2>4. Cómo se procesan y quién los recibe</h2>
       <p>
-        Los formularios del sitio envían los datos a un <strong>webhook de Zapier</strong> (Zapier Inc., Estados Unidos),
-        que los reenvía a mi correo electrónico y a la herramienta donde llevo el seguimiento de cotizaciones.
-        {/* TODO(pablo): confirmar herramienta de destino del Zap (Gmail, Sheets, CRM) y ajustar el texto */}
+        Los formularios del sitio envían los datos a un <strong>servicio de automatización</strong> que los reenvía a
+        mi correo electrónico (Gmail, de Google LLC, Estados Unidos).
+        {/* TODO(pablo): cuando se defina la herramienta que recibe el formulario (Zapier u otra), nombrarla aquí. */}
         Esto implica una transferencia internacional de datos a un proveedor que actúa como encargado del tratamiento,
         bajo sus propias garantías contractuales y de seguridad.
       </p>
@@ -81,7 +81,7 @@ export default function App() {
         Además, según el canal, tus datos pueden pasar por:
       </p>
       <ul>
-        <li><strong>El proveedor de correo electrónico</strong> desde el que respondo. {/* TODO(pablo): confirmar proveedor (Google Workspace, Cloudflare Email, otro) */}</li>
+        <li><strong>Gmail</strong> (Google LLC), el correo desde el que respondo.</li>
         <li><strong>WhatsApp</strong> (Meta Platforms), si la conversación es por ese medio.</li>
         <li><strong>El proveedor de hosting del sitio</strong>, que registra datos técnicos de la conexión (ver sección 7).</li>
       </ul>
@@ -92,9 +92,8 @@ export default function App() {
 
       <h2>5. Cuánto tiempo se conservan</h2>
       <p>
-        {/* TODO(pablo): confirmar plazos de conservación */}
-        Si no llegamos a trabajar juntos, conservo tu cotización hasta <strong>12 meses</strong> después del último
-        contacto y luego la elimino. Si contratas un servicio, conservo los datos mientras dure la relación comercial
+        Si no llegamos a trabajar juntos, conservo tu cotización hasta <strong>30 días</strong> después de emitida
+        y luego la elimino. Si contratas un servicio, conservo los datos mientras dure la relación comercial
         y, después, el tiempo necesario para cumplir la garantía de 6 meses y las obligaciones tributarias asociadas a
         la boleta de honorarios. Puedes pedir la eliminación antes de esos plazos (ver sección 6).
       </p>
@@ -132,9 +131,9 @@ export default function App() {
       </p>
       <ul>
         <li>
-          <strong>Hosting</strong>: el sitio se publica en Cloudflare Pages. Cloudflare puede usar cookies estrictamente
-          técnicas de seguridad y registrar datos de conexión (dirección IP, navegador, fecha) para operar y proteger
-          el servicio. {/* TODO(pablo): confirmar que el hosting productivo es Cloudflare Pages y no Vercel */}
+          <strong>Hosting y red</strong>: el sitio se publica en Vercel (Vercel Inc.) y se sirve a través de la red de
+          Cloudflare (Cloudflare Inc.). Ambos pueden usar cookies estrictamente técnicas de seguridad y registrar datos
+          de conexión (dirección IP, navegador, fecha) para operar y proteger el servicio.
         </li>
         <li>
           <strong>Tipografías</strong>: las fuentes del sitio se cargan desde Google Fonts, por lo que tu navegador

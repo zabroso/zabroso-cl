@@ -65,7 +65,6 @@ export default function App() {
 
               <div className={cardCls} style={{ ...cardShadow, transitionDelay: '.16s' }}>
                 <span className={labelCls}>Horario de respuesta</span>
-                {/* TODO(pablo): confirmar horario de atención */}
                 <span className="font-[family-name:var(--font-display)] text-[1.1rem] font-bold text-roble">Lunes a viernes</span>
                 <p className="text-[.8rem] text-muted leading-[1.55]">9:00 a 18:00, hora de Chile. Fuera de ese horario respondo el siguiente día hábil.</p>
               </div>
