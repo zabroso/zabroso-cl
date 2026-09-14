@@ -146,3 +146,9 @@ vite.config.ts.timestamp-*
 .DS_Store
 .vercel
 .env*
+
+# Claude Code / skills.sh local artifacts (not project code)
+.agents/
+.claude/
+.zapier-workflows/
+skills-lock.json
