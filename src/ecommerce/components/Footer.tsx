@@ -1,4 +1,4 @@
-import { EMAIL, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from '../../data/site'
+import { EMAIL, WHATSAPP_URL } from '../../data/site'
 
 const linkCls = 'no-underline text-[.8rem] font-semibold opacity-75 hover:opacity-100 transition-opacity'
 const legalCls = 'no-underline text-[.72rem] font-medium opacity-60 hover:opacity-100 transition-opacity'
@@ -24,9 +24,6 @@ export default function Footer() {
           </a>
           <a href="#faq" className={linkCls} style={{ color: '#FAF9F6' }}>
             FAQ
-          </a>
-          <a href={PHONE_TEL} className={linkCls} style={{ color: '#FAF9F6' }}>
-            {PHONE_DISPLAY}
           </a>
           <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="no-underline text-[.8rem] font-bold px-3 py-1" style={{ color: '#FAF9F6', background: '#25D366' }}>
             WhatsApp

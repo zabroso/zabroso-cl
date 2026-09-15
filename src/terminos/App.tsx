@@ -269,7 +269,7 @@ export default function App() {
       <h2>16. Contacto</h2>
       <ul>
         <li>Email: <a href="mailto:pablo@zabroso.cl">pablo@zabroso.cl</a></li>
-        <li>WhatsApp: <a href="tel:+56949360955">+56 9 4936 0955</a></li>
+        <li>WhatsApp: <a href="https://wa.me/56949360955?text=Hola%2C%20quiero%20cotizar" target="_blank" rel="noopener noreferrer">Escríbeme por WhatsApp</a></li>
         <li>Valparaíso, Chile</li>
       </ul>
     </LegalPage>

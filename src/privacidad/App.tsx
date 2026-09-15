@@ -27,7 +27,8 @@ export default function App() {
       <p>
         El responsable de los datos es <strong>Pablo Zabroso</strong>, desarrollador web, con domicilio en Valparaíso, Chile.
         Para cualquier consulta sobre esta política o sobre tus datos puedes escribir a{' '}
-        <a href="mailto:pablo@zabroso.cl">pablo@zabroso.cl</a> o al WhatsApp <a href="tel:+56949360955">+56 9 4936 0955</a>.
+        <a href="mailto:pablo@zabroso.cl">pablo@zabroso.cl</a> o por{' '}
+        <a href="https://wa.me/56949360955?text=Hola%2C%20quiero%20cotizar" target="_blank" rel="noopener noreferrer">WhatsApp</a>.
       </p>
 
       <h2>2. Qué datos se recogen</h2>
@@ -173,7 +174,7 @@ export default function App() {
       </p>
       <ul>
         <li>Email: <a href="mailto:pablo@zabroso.cl">pablo@zabroso.cl</a></li>
-        <li>WhatsApp: <a href="tel:+56949360955">+56 9 4936 0955</a></li>
+        <li>WhatsApp: <a href="https://wa.me/56949360955?text=Hola%2C%20quiero%20cotizar" target="_blank" rel="noopener noreferrer">Escríbeme por WhatsApp</a></li>
         <li>Valparaíso, Chile</li>
       </ul>
       <p>

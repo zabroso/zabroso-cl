@@ -1,5 +1,5 @@
 import { useState, type FormEvent, type ReactNode } from 'react'
-import { EMAIL, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from '../data/site'
+import { EMAIL, WHATSAPP_URL } from '../data/site'
 
 const servicios = ['Plan Básico', 'Plan Regular', 'Plan Avanzado', 'Más de una página / a cotizar', 'Mantención mensual']
 
@@ -19,8 +19,8 @@ export default function Contacto({
   title = 'Cuéntame qué necesitas.',
   intro = (
     <>
-      Completa el formulario y te respondo directo, sin vueltas. También puedes llamarme al{' '}
-      <a href={PHONE_TEL} className="text-terra font-semibold underline">{PHONE_DISPLAY}</a>.
+      Completa el formulario y te respondo directo, sin vueltas. También puedes escribirme a{' '}
+      <a href={`mailto:${EMAIL}`} className="text-terra font-semibold underline">{EMAIL}</a>.
     </>
   ),
 }: Props) {
@@ -108,22 +108,40 @@ export default function Contacto({
             </div>
 
             <div>
-              <label htmlFor="telefono" className="block text-[.75rem] font-bold uppercase tracking-[.06em] text-roble mb-1">Teléfono (opcional)</label>
-              <input
-                id="telefono" name="telefono" type="tel"
-                className="w-full border-2 border-roble bg-white px-4 py-[.6rem] text-[.9rem] text-roble outline-none focus:border-terra"
-              />
+              <label htmlFor="telefono" className="block text-[.75rem] font-bold uppercase tracking-[.06em] text-roble mb-1">Teléfono</label>
+              <div className="w-full flex border-2 border-roble bg-white focus-within:border-terra">
+                <span className="flex items-center gap-1.5 pl-3 pr-2 text-[.9rem] text-roble border-r-2 border-roble select-none" aria-hidden="true">
+                  🇨🇱 +56
+                </span>
+                <input
+                  id="telefono" name="telefono" type="tel" required
+                  inputMode="numeric"
+                  pattern="9\s?\d{4}\s?\d{4}"
+                  placeholder="9 1234 5678"
+                  title="Número de celular chileno: empieza con 9 y tiene 8 dígitos más, ej: 9 1234 5678"
+                  aria-label="Teléfono (celular chileno, sin el +56)"
+                  className="flex-1 min-w-0 px-4 py-[.6rem] text-[.9rem] text-roble outline-none bg-white"
+                />
+              </div>
             </div>
 
             <div>
               <label htmlFor="servicio" className="block text-[.75rem] font-bold uppercase tracking-[.06em] text-roble mb-1">¿Qué servicio te interesa?</label>
-              <select
-                id="servicio" name="servicio" required defaultValue=""
-                className="w-full border-2 border-roble bg-white px-4 py-[.6rem] text-[.9rem] text-roble outline-none focus:border-terra"
-              >
-                <option value="" disabled>Elige una opción</option>
-                {servicios.map(s => <option key={s} value={s}>{s}</option>)}
-              </select>
+              <div className="relative">
+                <select
+                  id="servicio" name="servicio" required defaultValue=""
+                  className="w-full appearance-none border-2 border-roble bg-white pl-4 pr-10 py-[.6rem] text-[.9rem] text-roble outline-none focus:border-terra"
+                >
+                  <option value="" disabled>Elige una opción</option>
+                  {servicios.map(s => <option key={s} value={s}>{s}</option>)}
+                </select>
+                <svg
+                  className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-roble"
+                  width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" aria-hidden="true"
+                >
+                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
             </div>
 
             <div>

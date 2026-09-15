@@ -2,8 +2,8 @@ import type { VercelRequest, VercelResponse } from '@vercel/node'
 
 const RESEND_FROM = 'noreply@zabroso.cl'
 const RESEND_TO = 'pjmarambioc@gmail.com'
+const CONTACTO_PUBLICO = 'pablo@zabroso.cl'
 const WHATSAPP_URL = 'https://wa.me/56949360955?text=Hola%2C%20quiero%20cotizar'
-const PHONE_DISPLAY = '+56 9 4936 0955'
 
 type Origen = 'main' | 'ecommerce'
 
@@ -29,6 +29,8 @@ const CAMPOS: { key: string; label: string }[] = [
 ]
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+// Celular chileno: empieza en 9 y tiene 8 dígitos más, con espacios opcionales (ej: "9 1234 5678").
+const TELEFONO_RE = /^9\s?\d{4}\s?\d{4}$/
 
 function escapeHtml(value: string): string {
   return value
@@ -71,7 +73,7 @@ function emailConfirmacionCliente(nombre: string, origen: Origen): string {
         <p style="margin:0;color:#8B7355;font-size:.85rem;line-height:1.6;">
           Un saludo,<br>
           <strong style="color:#2C1810;">Pablo Marambio</strong><br>
-          Zabroso.cl · ${PHONE_DISPLAY}
+          Zabroso.cl · ${CONTACTO_PUBLICO}
         </p>
       </td>
     </tr>
@@ -119,13 +121,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const origen = body.origen === 'ecommerce' ? 'ecommerce' : body.origen === 'main' ? 'main' : null
   const nombre = typeof body.nombre === 'string' ? body.nombre.trim() : ''
   const email = typeof body.email === 'string' ? body.email.trim() : ''
+  const telefono = typeof body.telefono === 'string' ? body.telefono.trim() : ''
   // El checkbox de FormData llega como 'on' cuando está marcado, o ausente si no.
   const consentimiento = body.consentimiento === 'on' || body.consentimiento === true
 
-  if (!origen || !nombre || !email || !EMAIL_RE.test(email) || !consentimiento) {
+  if (!origen || !nombre || !email || !EMAIL_RE.test(email) || !TELEFONO_RE.test(telefono) || !consentimiento) {
     res.status(400).json({ error: 'Datos del formulario incompletos, inválidos o sin consentimiento' })
     return
   }
+
+  // El campo solo captura el número local; se le antepone +56 para mostrarlo completo.
+  body.telefono = `+56 ${telefono}`
 
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) {

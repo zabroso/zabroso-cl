@@ -44,7 +44,7 @@ export default function App() {
               rel="noopener noreferrer"
               className="rvL inline-flex items-center gap-3 px-7 py-[.8rem] text-[.85rem] font-bold tracking-[.06em] uppercase text-white no-underline animate-pulse-terra mb-14"
               style={{ background: '#E2725B', boxShadow: '4px 4px 0 #3E2723' }}
-              aria-label="Escribir por WhatsApp al +56 9 4936 0955"
+              aria-label="Escribir por WhatsApp"
             >
               <span aria-hidden="true">💬</span>
               Escríbeme por WhatsApp →
@@ -52,9 +52,9 @@ export default function App() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               <div className={cardCls} style={cardShadow}>
-                <span className={labelCls}>Teléfono / WhatsApp</span>
-                <a href="tel:+56949360955" className={valueCls}>+56 9 4936 0955</a>
-                <p className="text-[.8rem] text-muted leading-[1.55]">Llamada o mensaje, como te acomode.</p>
+                <span className={labelCls}>WhatsApp</span>
+                <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className={valueCls}>Escríbeme →</a>
+                <p className="text-[.8rem] text-muted leading-[1.55]">Te respondo directo por mensaje.</p>
               </div>
 
               <div className={cardCls} style={{ ...cardShadow, transitionDelay: '.08s' }}>
