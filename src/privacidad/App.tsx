@@ -71,11 +71,12 @@ export default function App() {
 
       <h2>4. Cómo se procesan y quién los recibe</h2>
       <p>
-        Los formularios del sitio envían los datos a un <strong>servicio de automatización</strong> que los reenvía a
-        mi correo electrónico (Gmail, de Google LLC, Estados Unidos).
-        {/* TODO(pablo): cuando se defina la herramienta que recibe el formulario (Zapier u otra), nombrarla aquí. */}
-        Esto implica una transferencia internacional de datos a un proveedor que actúa como encargado del tratamiento,
-        bajo sus propias garantías contractuales y de seguridad.
+        Los formularios del sitio son procesados por una función del servidor alojada en{' '}
+        <strong>Vercel Inc.</strong> (Estados Unidos), que envía los datos mediante{' '}
+        <strong>Resend</strong> (Estados Unidos) a mi correo electrónico (Gmail, de Google LLC, Estados Unidos), y
+        también te envía a ti una confirmación automática de recepción.
+        Esto implica una transferencia internacional de datos a proveedores que actúan como encargados del
+        tratamiento, bajo sus propias garantías contractuales y de seguridad.
       </p>
       <p>
         Además, según el canal, tus datos pueden pasar por:
@@ -83,7 +84,7 @@ export default function App() {
       <ul>
         <li><strong>Gmail</strong> (Google LLC), el correo desde el que respondo.</li>
         <li><strong>WhatsApp</strong> (Meta Platforms), si la conversación es por ese medio.</li>
-        <li><strong>El proveedor de hosting del sitio</strong>, que registra datos técnicos de la conexión (ver sección 7).</li>
+        <li><strong>Vercel Inc.</strong>, que aloja el sitio y registra datos técnicos de la conexión (ver sección 7).</li>
       </ul>
       <p>
         <strong>No vendo, arriendo ni cedo tus datos a terceros</strong> con fines comerciales. Solo se comparten con
@@ -148,7 +149,7 @@ export default function App() {
       <h2>8. Seguridad</h2>
       <p>
         El sitio se sirve exclusivamente por HTTPS. Los formularios incluyen protección básica contra envíos automatizados.
-        Los proveedores mencionados (Zapier, Cloudflare, WhatsApp, correo) aplican sus propias medidas de seguridad.
+        Los proveedores mencionados (Vercel, Cloudflare, Resend, WhatsApp, correo) aplican sus propias medidas de seguridad.
         Aun así, ninguna transmisión por internet es completamente segura: si necesitas enviarme información
         especialmente delicada, coordinemos antes un canal adecuado.
       </p>

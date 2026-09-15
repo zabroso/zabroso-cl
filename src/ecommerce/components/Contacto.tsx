@@ -1,11 +1,9 @@
 import { useState, type FormEvent } from 'react'
 import { EMAIL, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from '../../data/site'
 
-const WEBHOOK_URL = import.meta.env.VITE_ZAPIER_WEBHOOK_ECOMMERCE_URL as string | undefined
-
 const pagos = ['Mensual — $92.500 x 12 meses', 'Pago único — $750.000', 'No estoy seguro / quiero que me asesoren']
 
-type Status = 'idle' | 'sending' | 'sent' | 'error' | 'not-configured'
+type Status = 'idle' | 'sending' | 'sent' | 'error'
 
 export default function Contacto() {
   const [status, setStatus] = useState<Status>('idle')
@@ -17,17 +15,12 @@ export default function Contacto() {
 
     if (data.get('empresa_web')) return // honeypot
 
-    if (!WEBHOOK_URL) {
-      setStatus('not-configured')
-      return
-    }
-
     setStatus('sending')
     try {
-      const res = await fetch(WEBHOOK_URL, {
+      const res = await fetch('/api/contacto', {
         method: 'POST',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify(Object.fromEntries(data.entries())),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...Object.fromEntries(data.entries()), origen: 'ecommerce' }),
       })
       if (!res.ok) throw new Error('respuesta no ok')
       setStatus('sent')
@@ -125,6 +118,20 @@ export default function Contacto() {
               />
             </div>
 
+            <div className="flex items-start gap-2">
+              <input
+                id="consentimiento" name="consentimiento" type="checkbox" required
+                className="mt-1 h-4 w-4 accent-terra"
+              />
+              <label htmlFor="consentimiento" className="text-[.8rem] leading-snug text-muted">
+                Acepto la{' '}
+                <a href="/privacidad/" target="_blank" rel="noopener" className="underline font-semibold text-roble">
+                  política de privacidad
+                </a>{' '}
+                y que mis datos se usen para contactarme sobre este proyecto.
+              </label>
+            </div>
+
             <button
               type="submit"
               disabled={status === 'sending'}
@@ -134,7 +141,7 @@ export default function Contacto() {
               {status === 'sending' ? 'Enviando…' : 'Enviar cotización →'}
             </button>
 
-            {(status === 'error' || status === 'not-configured') && (
+            {status === 'error' && (
               <p className="text-[.8rem]" style={{ color: '#B3261E' }}>
                 Algo falló al enviar. Escríbeme directo a{' '}
                 <a href={`mailto:${EMAIL}`} className="underline font-semibold">{EMAIL}</a>.
