@@ -1,12 +1,16 @@
 import { useState, type FormEvent } from 'react'
 import { EMAIL, WHATSAPP_URL } from '../../data/site'
+import StyledSelect from '../../components/StyledSelect'
 
 const pagos = ['Mensual — $92.500 x 12 meses', 'Pago único — $750.000', 'No estoy seguro / quiero que me asesoren']
+  .map(p => ({ value: p, label: p }))
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
 export default function Contacto() {
   const [status, setStatus] = useState<Status>('idle')
+  const [pago, setPago] = useState('')
+  const [pagoError, setPagoError] = useState(false)
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -14,6 +18,11 @@ export default function Contacto() {
     const data = new FormData(form)
 
     if (data.get('empresa_web')) return // honeypot
+
+    if (!pago) {
+      setPagoError(true)
+      return
+    }
 
     setStatus('sending')
     try {
@@ -25,6 +34,7 @@ export default function Contacto() {
       if (!res.ok) throw new Error('respuesta no ok')
       setStatus('sent')
       form.reset()
+      setPago('')
     } catch {
       setStatus('error')
     }
@@ -117,22 +127,21 @@ export default function Contacto() {
             </div>
 
             <div>
-              <label htmlFor="pago" className="block text-[.75rem] font-bold uppercase tracking-[.06em] text-roble mb-1">¿Cómo prefieres pagar?</label>
-              <div className="relative">
-                <select
-                  id="pago" name="pago" required defaultValue=""
-                  className="w-full appearance-none border-2 border-roble bg-cream pl-4 pr-10 py-[.6rem] text-[.9rem] text-roble outline-none focus:border-terra"
-                >
-                  <option value="" disabled>Elige una opción</option>
-                  {pagos.map(p => <option key={p} value={p}>{p}</option>)}
-                </select>
-                <svg
-                  className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-roble"
-                  width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" aria-hidden="true"
-                >
-                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
+              <span id="pago-label" className="block text-[.75rem] font-bold uppercase tracking-[.06em] text-roble mb-1">¿Cómo prefieres pagar?</span>
+              <StyledSelect
+                name="pago"
+                labelledBy="pago-label"
+                options={pagos}
+                value={pago}
+                onChange={v => { setPago(v); setPagoError(false) }}
+                error={pagoError}
+                bg="bg-cream"
+              />
+              {pagoError && (
+                <p role="alert" className="mt-1 text-[.75rem]" style={{ color: '#B3261E' }}>
+                  Elige una opción para poder cotizar.
+                </p>
+              )}
             </div>
 
             <div>

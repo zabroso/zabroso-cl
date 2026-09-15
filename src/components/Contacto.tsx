@@ -1,7 +1,9 @@
 import { useState, type FormEvent, type ReactNode } from 'react'
 import { EMAIL, WHATSAPP_URL } from '../data/site'
+import StyledSelect from './StyledSelect'
 
 const servicios = ['Plan Básico', 'Plan Regular', 'Plan Avanzado', 'Más de una página / a cotizar', 'Mantención mensual']
+  .map(s => ({ value: s, label: s }))
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
@@ -25,6 +27,8 @@ export default function Contacto({
   ),
 }: Props) {
   const [status, setStatus] = useState<Status>('idle')
+  const [servicio, setServicio] = useState('')
+  const [servicioError, setServicioError] = useState(false)
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -32,6 +36,11 @@ export default function Contacto({
     const data = new FormData(form)
 
     if (data.get('empresa_web')) return // honeypot
+
+    if (!servicio) {
+      setServicioError(true)
+      return
+    }
 
     setStatus('sending')
     try {
@@ -43,6 +52,7 @@ export default function Contacto({
       if (!res.ok) throw new Error('respuesta no ok')
       setStatus('sent')
       form.reset()
+      setServicio('')
     } catch {
       setStatus('error')
     }
@@ -126,22 +136,20 @@ export default function Contacto({
             </div>
 
             <div>
-              <label htmlFor="servicio" className="block text-[.75rem] font-bold uppercase tracking-[.06em] text-roble mb-1">¿Qué servicio te interesa?</label>
-              <div className="relative">
-                <select
-                  id="servicio" name="servicio" required defaultValue=""
-                  className="w-full appearance-none border-2 border-roble bg-white pl-4 pr-10 py-[.6rem] text-[.9rem] text-roble outline-none focus:border-terra"
-                >
-                  <option value="" disabled>Elige una opción</option>
-                  {servicios.map(s => <option key={s} value={s}>{s}</option>)}
-                </select>
-                <svg
-                  className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-roble"
-                  width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" aria-hidden="true"
-                >
-                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
+              <span id="servicio-label" className="block text-[.75rem] font-bold uppercase tracking-[.06em] text-roble mb-1">¿Qué servicio te interesa?</span>
+              <StyledSelect
+                name="servicio"
+                labelledBy="servicio-label"
+                options={servicios}
+                value={servicio}
+                onChange={v => { setServicio(v); setServicioError(false) }}
+                error={servicioError}
+              />
+              {servicioError && (
+                <p role="alert" className="mt-1 text-[.75rem]" style={{ color: '#B3261E' }}>
+                  Elige una opción para poder cotizar.
+                </p>
+              )}
             </div>
 
             <div>
