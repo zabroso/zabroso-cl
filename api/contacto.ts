@@ -2,12 +2,19 @@ import type { VercelRequest, VercelResponse } from '@vercel/node'
 
 const RESEND_FROM = 'noreply@zabroso.cl'
 const RESEND_TO = 'pjmarambioc@gmail.com'
+const WHATSAPP_URL = 'https://wa.me/56949360955?text=Hola%2C%20quiero%20cotizar'
+const PHONE_DISPLAY = '+56 9 4936 0955'
 
 type Origen = 'main' | 'ecommerce'
 
 const ETIQUETAS_ORIGEN: Record<Origen, string> = {
   main: 'Sitio principal',
   ecommerce: 'Tienda online',
+}
+
+const ASUNTO_ORIGEN: Record<Origen, string> = {
+  main: 'tu página web',
+  ecommerce: 'tu tienda online',
 }
 
 /** Campos que puede traer cualquiera de los dos formularios; se muestran solo los presentes. */
@@ -28,6 +35,49 @@ function escapeHtml(value: string): string {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
+}
+
+function emailConfirmacionCliente(nombre: string, origen: Origen): string {
+  const primerNombre = escapeHtml(nombre.split(' ')[0] ?? nombre)
+  return `
+<div style="background:#FAF9F6;padding:32px 16px;font-family:Georgia,'Times New Roman',serif;">
+  <table role="presentation" width="100%" style="max-width:480px;margin:0 auto;background:#FFFFFF;border:2px solid #5D4037;">
+    <tr>
+      <td style="background:#5D4037;padding:20px 28px;">
+        <span style="color:#FAF9F6;font-size:1.05rem;font-weight:bold;letter-spacing:.04em;">zabroso.cl</span>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:28px;">
+        <p style="margin:0 0 16px;color:#2C1810;font-size:1.05rem;">¡Hola, ${primerNombre}!</p>
+        <p style="margin:0 0 16px;color:#2C1810;font-size:.95rem;line-height:1.7;">
+          Recibí tu mensaje sobre <strong>${ASUNTO_ORIGEN[origen]}</strong> — gracias por escribirme.
+        </p>
+        <p style="margin:0 0 16px;color:#2C1810;font-size:.95rem;line-height:1.7;">
+          Voy a revisar los detalles con calma y te voy a contactar personalmente
+          (yo, Pablo Marambio, no un bot) dentro de las próximas <strong>24 a 48 horas hábiles</strong>
+          a este mismo correo. Si prefieres una respuesta más rápida, también puedes escribirme
+          directo por WhatsApp.
+        </p>
+        <table role="presentation" style="margin:8px 0 20px;">
+          <tr>
+            <td style="background:#E2725B;padding:10px 20px;">
+              <a href="${WHATSAPP_URL}" style="color:#FFFFFF;text-decoration:none;font-size:.85rem;font-weight:bold;">
+                Escríbeme por WhatsApp →
+              </a>
+            </td>
+          </tr>
+        </table>
+        <p style="margin:0;color:#8B7355;font-size:.85rem;line-height:1.6;">
+          Un saludo,<br>
+          <strong style="color:#2C1810;">Pablo Marambio</strong><br>
+          Zabroso.cl · ${PHONE_DISPLAY}
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
+`
 }
 
 async function enviarEmail(apiKey: string, datos: { to: string; replyTo?: string; subject: string; html: string }) {
@@ -106,12 +156,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     await enviarEmail(apiKey, {
       to: email,
       replyTo: RESEND_TO,
-      subject: 'Recibí tu mensaje — Zabroso.cl',
-      html: `
-        <p>Hola ${escapeHtml(nombre)},</p>
-        <p>Recibí tu mensaje y pronto me voy a comunicar contigo para conversar sobre tu proyecto.</p>
-        <p>Saludos,<br>Pablo</p>
-      `,
+      subject: 'Recibí tu mensaje — te contacto pronto',
+      html: emailConfirmacionCliente(nombre, origen),
     })
   } catch (error) {
     console.error('Error al enviar confirmación al cliente', error)
