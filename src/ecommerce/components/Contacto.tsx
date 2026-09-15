@@ -59,9 +59,16 @@ export default function Contacto() {
         </a>
 
         {status === 'sent' ? (
-          <div className="rv border-2 border-roble bg-cream p-8 text-center" style={{ boxShadow: '4px 4px 0 #5D4037' }}>
-            <p className="font-[family-name:var(--font-display)] text-[1.1rem] font-bold text-roble mb-1">¡Listo! Recibí tu mensaje.</p>
-            <p className="text-[.85rem] text-muted">Te voy a escribir pronto a tu correo.</p>
+          <div
+            role="status"
+            aria-live="polite"
+            className="border-2 border-roble bg-cream p-8 text-center"
+            style={{ boxShadow: '4px 4px 0 #5D4037' }}
+          >
+            <p className="font-[family-name:var(--font-display)] text-[1.1rem] font-bold text-roble mb-1">✓ ¡Listo! Recibí tu mensaje.</p>
+            <p className="text-[.85rem] text-muted">
+              Te acabo de enviar un correo de confirmación. Voy a escribirte a tu email dentro de las próximas 24 a 48 horas hábiles.
+            </p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="rv space-y-4">
@@ -142,7 +149,7 @@ export default function Contacto() {
             </button>
 
             {status === 'error' && (
-              <p className="text-[.8rem]" style={{ color: '#B3261E' }}>
+              <p role="alert" className="text-[.8rem]" style={{ color: '#B3261E' }}>
                 Algo falló al enviar. Escríbeme directo a{' '}
                 <a href={`mailto:${EMAIL}`} className="underline font-semibold">{EMAIL}</a>.
               </p>
